@@ -11,19 +11,19 @@
 		<div class="row" style="margin-top: 45px;">
 			<div class="col-md-4 col-md-offset-6">
 				<h4>Register | Custom Auth</h4><hr>
-				@csrf
 				<form action="{{ route('auth.save') }}" method="post">
+				{{ csrf_field() }}
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" name="email" class="form-control" placeholder="Enter Name">
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="text" name="email" class="form-control" placeholder="Enter Email Address">
+						<input type="email" name="email" class="form-control" placeholder="Enter Email Address">
 					</div>
 					<div class="form-group">
 						<label>Password</label>
-						<input type="text" name="password" class="form-control" placeholder="Enter Email Password">
+						<input type="password" name="password" class="form-control" placeholder="Enter Email Password">
 					</div>
 					<button type="submit" class="btn btn-block btn-primary">Sign Up</button>
 					<br>
