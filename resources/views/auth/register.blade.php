@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-5.1.3/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.3.7/css/bootstrap.min.css') }}">
 </head>
 <body>
 	<div class="container mt-3">
 		<div class="row" style="margin-top: 45px;">
-			<div class="col-md-4 col-md-offset-6">
+			<div class="col-md-4 col-md-offset-4">
 				<h4>Register | Custom Auth</h4><hr>
 				<form action="{{ route('auth.save') }}" method="post">
 				{{ csrf_field() }}
