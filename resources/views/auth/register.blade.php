@@ -12,18 +12,34 @@
 			<div class="col-md-4 col-md-offset-4">
 				<h4>Register | Custom Auth</h4><hr>
 				<form action="{{ route('auth.save') }}" method="post">
+
+				@if(Session::get('success'))
+					<div class="alert alert-success">
+						{{ Session::get('success') }}
+					</div>
+				@endif
+
+				@if(Session::get('fail'))
+					<div class="alert alert-success">
+						{{ Session::get('fail') }}
+					</div>
+				@endif
+
 				{{ csrf_field() }}
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" name="email" class="form-control" placeholder="Enter Name">
+						<input type="text" name="name" class="form-control" placeholder="Enter Name" value="{{ old('name') }}">
+						<span class="text-danger">@error('name'){{ $message }} @enderror</span>
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" name="email" class="form-control" placeholder="Enter Email Address">
+						<input type="email" name="email" class="form-control" placeholder="Enter Email Address" value="{{ old('email') }}">
+						<span class="text-danger">@error('email'){{ $message }} @enderror</span>
 					</div>
 					<div class="form-group">
 						<label>Password</label>
 						<input type="password" name="password" class="form-control" placeholder="Enter Email Password">
+						<span class="text-danger">@error('password'){{ $message }} @enderror</span>
 					</div>
 					<button type="submit" class="btn btn-block btn-primary">Sign Up</button>
 					<br>
