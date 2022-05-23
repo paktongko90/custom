@@ -12,6 +12,12 @@
 			<div class="col-md-4 col-md-offset-4">
 				<h4>Login | Custom Auth</h4><hr>
 				<form action="{{ route('auth.check') }}" method="post">
+				@if(Session::get('fail'))
+					<div class="alert alert-danger">
+						{{ Session::get('fail') }}
+					</div>
+				@endif
+
 				{{ csrf_field() }}
 					<div class="form-group">
 						<label>Email</label>
